@@ -4,7 +4,7 @@
   width: 100%;
 }
 
-.card__list {
+.gallery__list {
   display: grid;
   grid-template-columns: repeat(auto-fit, 282px);
   gap: 20px 17px;
