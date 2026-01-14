@@ -16,7 +16,7 @@ const cardLinkInput = newCardForm.querySelector(".popup__input_type_url");
 const profileName = document.querySelector(".profile__title");
 const profileDescription = document.querySelector(".profile__description");
 const cardTemplate = document.querySelector("#card-template");
-const cardsContainer = document.querySelector(".elements__list");
+const cardsContainer = document.querySelector(".elements");
 
 const imagePopup = document.querySelector("#image-popup");
 const popupImage = imagePopup.querySelector(".popup__image");
