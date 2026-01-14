@@ -16,7 +16,7 @@ const cardLinkInput = newCardForm.querySelector(".popup__input_type_url");
 const profileName = document.querySelector(".profile__title");
 const profileDescription = document.querySelector(".profile__description");
 const cardTemplate = document.querySelector("#card-template");
-const cardsContainer = document.querySelector(".cards__list");
+const cardsContainer = document.querySelector(".elements__list");
 
 const imagePopup = document.querySelector("#image-popup");
 const popupImage = imagePopup.querySelector(".popup__image");
@@ -76,30 +76,25 @@ function handleProfileFormSubmit(evt) {
 }
 
 // Tarjetas
-function getCardElement(
-  name = "Sin título",
-  link = "./images/placeholder.jpg"
-) {
-  const cardTemplate = document.querySelector("#card-template").content;
-  const cardElement = cardTemplate.querySelector(".card").cloneNode(true);
+function getCardElement(name, link) {
+  const cardElement = cardTemplate.content
+    .querySelector(".card")
+    .cloneNode(true);
 
-  // Título
   cardElement.querySelector(".card__title").textContent = name;
 
-  // Imagen
   const image = cardElement.querySelector(".card__image");
   image.src = link;
   image.alt = name;
 
-  // Like
-  const likeButton = cardElement.querySelector(".card__like-button");
-  likeButton.addEventListener("click", handleLikeButton);
+  cardElement
+    .querySelector(".card__like-button")
+    .addEventListener("click", handleLikeButton);
 
-  // Eliminar
-  const deleteButton = cardElement.querySelector(".card__delete-button");
-  deleteButton.addEventListener("click", handleDeleteCard);
+  cardElement
+    .querySelector(".card__delete-button")
+    .addEventListener("click", handleDeleteCard);
 
-  // Abrir popup de imagen
   image.addEventListener("click", () => {
     handleImageClick(name, link);
   });
