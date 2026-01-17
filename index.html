@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
@@ -55,14 +55,26 @@
               name="name"
               placeholder="Nombre"
               type="text"
+              minlength="2"
+              maxlength="40"
+              required
+              id="profile-name"
             />
+            <span class="popup__error" id="profile-name-error"></span>
             <input
               class="popup__input popup__input_type_description"
               name="description"
               placeholder="Acerca de mí"
               type="text"
+              minlength="2"
+              maxlength="200"
+              required
+              id="profile-about"
             />
-            <button class="button popup__button" type="submit">Guardar</button>
+            <span class="popup__error" id="profile-about-error"></span>
+            <button class="button popup__button" type="submit" disabled>
+              Guardar
+            </button>
           </form>
         </div>
       </div>
@@ -79,17 +91,26 @@
               class="popup__input popup__input_type_card-name"
               name="place-name"
               placeholder="Título"
-              required
               type="text"
+              minlength="2"
+              maxlength="30"
+              required
+              id="card-title"
             />
+            <span class="popup__error" id="card-title-error"></span>
+
             <input
               class="popup__input popup__input_type_url"
               name="link"
               placeholder="Enlace a la imagen"
               required
               type="url"
+              id="card-link"
             />
-            <button class="button popup__button" type="submit">Crear</button>
+            <span class="popup__error" id="card-link-error"></span>
+            <button class="button popup__button" type="submit" disabled>
+              Crear
+            </button>
           </form>
         </div>
       </div>

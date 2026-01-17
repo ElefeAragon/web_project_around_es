@@ -157,3 +157,19 @@
     padding: 0;
   }
 }
+
+.popup__error {
+  color: #ff0000;
+  font-size: 12px;
+  line-height: 15px;
+  margin-top: 5px;
+  min-height: 15px;
+}
+
+.popup__save-button:disabled {
+  background-color: #e5e5e5;
+  color: #000;
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
