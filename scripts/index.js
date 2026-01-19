@@ -6,6 +6,7 @@ const newCardPopup = document.querySelector("#new-card-popup");
 const closeEditPopupButton = editPopup.querySelector(".popup__close");
 const closeNewCardPopupButton = newCardPopup.querySelector(".popup__close");
 
+const editProfileForm = document.querySelector("#edit-profile-form");
 enableValidation(editProfileForm);
 
 const newCardForm = document.querySelector("#new-card-form");
@@ -14,7 +15,7 @@ enableValidation(newCardForm);
 
 const nameInput = document.querySelector(".popup__input_type_name");
 const descriptionInput = document.querySelector(
-  ".popup__input_type_description",
+  ".popup__input_type_description"
 );
 const cardNameInput = newCardForm.querySelector(".popup__input_type_card-name");
 const cardLinkInput = newCardForm.querySelector(".popup__input_type_url");
@@ -72,7 +73,7 @@ function handleOverlayClick(evt) {
   }
 }
 
-//Cerrar con ESC 
+//Cerrar con ESC
 function handleEscClose(evt) {
   if (evt.key === "Escape") {
     const openedPopup = document.querySelector(".popup_is-opened");
@@ -209,7 +210,6 @@ popups.forEach((popup) => {
   popup.addEventListener("click", handleOverlayClick);
 });
 
-
 // Event listeners
 editProfileButton.addEventListener("click", () => {
   fillProfileForm();
@@ -223,7 +223,7 @@ addCardButton.addEventListener("click", () => {
 
 closeEditPopupButton.addEventListener("click", () => closeModal(editPopup));
 closeNewCardPopupButton.addEventListener("click", () =>
-  closeModal(newCardPopup),
+  closeModal(newCardPopup)
 );
 
 closeImagePopupButton.addEventListener("click", () => {
