@@ -87,7 +87,7 @@
   line-height: 30px;
 }
 
-.popup_is-opened {
+.popup_opened {
   display: flex;
 }
 
@@ -172,7 +172,3 @@
   opacity: 0.5;
   cursor: not-allowed;
 }
-<<<<<<< HEAD
-
-=======
->>>>>>> fe928720d1254e4b665b6696fcb947ccc0c8aa67
