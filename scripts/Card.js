@@ -1,4 +1,5 @@
 export default class Card {
+<<<<<<< HEAD
   constructor(data, templateSelector, handleCardClick) {
     this._name = data.name;
     this._link = data.link;
@@ -10,11 +11,33 @@ export default class Card {
     return document
       .querySelector(this._templateSelector)
       .content.querySelector(".card")
+=======
+  constructor(data, templateSelector, handleImageClick) {
+    this._name = data.name;
+    this._link = data.link;
+    this._templateSelector = templateSelector;
+    this._handleImageClick = handleImageClick;
+  }
+
+  
+  // Métodos privados
+  _getTemplate() {
+    return document
+      .querySelector(this._templateSelector)
+      .content
+      .querySelector(".card")
+>>>>>>> fe928720d1254e4b665b6696fcb947ccc0c8aa67
       .cloneNode(true);
   }
 
   _handleLikeClick() {
+<<<<<<< HEAD
     this._likeButton.classList.toggle("card__like-button_is-active");
+=======
+    this._likeButton.classList.toggle(
+      "card__like-button_is-active"
+    );
+>>>>>>> fe928720d1254e4b665b6696fcb947ccc0c8aa67
   }
 
   _handleDeleteClick() {
@@ -32,10 +55,19 @@ export default class Card {
     });
 
     this._image.addEventListener("click", () => {
+<<<<<<< HEAD
       this._handleCardClick(this._name, this._link);
     });
   }
 
+=======
+      this._handleImageClick(this._name, this._link);
+    });
+  }
+
+
+  // Método público
+>>>>>>> fe928720d1254e4b665b6696fcb947ccc0c8aa67
   generateCard() {
     this._element = this._getTemplate();
 
