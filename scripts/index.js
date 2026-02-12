@@ -5,15 +5,11 @@ import PopupWithForm from "./PopupWithForm.js";
 import PopupWithImage from "./PopupWithImage.js";
 import UserInfo from "./UserInfo.js";
 
-// =====================
 // Selectores
-// =====================
 const editProfileButton = document.querySelector(".profile__edit-button");
 const addCardButton = document.querySelector(".profile__add-button");
 
-// =====================
 // Datos iniciales
-// =====================
 const initialCards = [
   {
     name: "Valle de Yosemite",
@@ -41,17 +37,13 @@ const initialCards = [
   },
 ];
 
-// =====================
 // UserInfo
-// =====================
 const userInfo = new UserInfo({
   nameSelector: ".profile__title",
   jobSelector: ".profile__description",
 });
 
-// =====================
 // Popup imagen
-// =====================
 const imagePopup = new PopupWithImage("#image-popup");
 imagePopup.setEventListeners();
 
@@ -59,17 +51,13 @@ function handleCardClick(name, link) {
   imagePopup.open(name, link);
 }
 
-// =====================
 // Render tarjeta
-// =====================
 function renderCard(cardData) {
   const card = new Card(cardData, "#card-template", handleCardClick);
   return card.generateCard();
 }
 
-// =====================
 // Section
-// =====================
 const cardSection = new Section(
   {
     items: initialCards,
@@ -81,9 +69,7 @@ const cardSection = new Section(
   ".elements",
 );
 
-// =====================
 // Popups con formulario
-// =====================
 const editPopup = new PopupWithForm("#edit-popup", (formData) => {
   userInfo.setUserInfo({
     name: formData.name,
@@ -102,9 +88,7 @@ const newCardPopup = new PopupWithForm("#new-card-popup", (formData) => {
 editPopup.setEventListeners();
 newCardPopup.setEventListeners();
 
-// =====================
 // Validación
-// =====================
 const validationConfig = {
   inputSelector: ".popup__input",
   submitButtonSelector: ".popup__button",
@@ -123,9 +107,7 @@ const newCardValidator = new FormValidator(
 editProfileValidator.setEventListeners();
 newCardValidator.setEventListeners();
 
-// =====================
 // Eventos botones
-// =====================
 editProfileButton.addEventListener("click", () => {
   const userData = userInfo.getUserInfo();
   const form = document.querySelector("#edit-profile-form");
@@ -142,7 +124,5 @@ addCardButton.addEventListener("click", () => {
   newCardPopup.open();
 });
 
-// =====================
 // Render inicial
-// =====================
 cardSection.renderItems();
