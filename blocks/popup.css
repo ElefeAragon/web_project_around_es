@@ -172,3 +172,14 @@
   opacity: 0.5;
   cursor: not-allowed;
 }
+
+.popup__content_type_confirm {
+  width: 430px;
+  min-height: 181px;
+}
+
+.popup__content_type_confirm {
+  width: 430px;
+  height: 181px;
+  padding: 34px 36px 36px;
+}
